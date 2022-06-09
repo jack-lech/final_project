@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container-sm">
+    <table class="table">
+        <div class="row">
+            <div class="col-md-12 mb-5 bg-body rounded">
+                <div class="jumbotron shadow-sm p-3 mt-3">
+                    <h1 class="text-center">
+                        Weather API
+                    </h1>
+                    <p class="text-center">The idea behind this table is a quick reference to see where the best weather is locally to plan a day trip</p>
+        <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Location</th>
+            <th scope="col">Temperature</th>
+            <th scope="col">Cloud Conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for item in data %}
+        <tr>
+            <th scope="row"> {{ item.name }}</th>
+            <th scope="row">({{ item.lat }}, {{ item.lon }})</th>
+            <td>{{ item.temp }}</td>
+            <td>{{ item.weather }}</td>
+        </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{%endblock%}

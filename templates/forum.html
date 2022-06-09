@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container-sm">
+    <div class="shadow p-3 mb-5 bg-body rounded">
+        <h1>A place for friendly conversation
+        </h1>
+        <h3><a href="{% url 'forum_post' %}" >Make post</a></h3>
+    </div>
+        <div class="container-sm">
+            <div class="row">
+                <!-- Blog Entries Column -->
+                <div class="shadow p-3 mb-5 bg-body rounded">
+                    {% for comment in comment_list %}
+                    <div class="shadow p-3 mb-5 bg-body rounded">
+                        <div>
+                            <h5 class="text-muted">{{ comment.name }}</h5>
+                            <p class="forum-message">{{comment.message}}</p>
+                            <hr>
+                            <p class="text-muted">{{comment.created_on}}</p>
+
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+</div>
+{%endblock%}
