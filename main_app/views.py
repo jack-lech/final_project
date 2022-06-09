@@ -17,7 +17,7 @@ def aboutme(request):
 def webapp(request):
     city_list = [ "SanDiego", "Temecula", "Murrieta", "Idyllwild"]
     all_city_list = []
-    key = "3d7c7bb9c21f35dc0201beb2b0f6970b"
+    key = ""
     part = "minutely,alerts,daily,hourly,"
     for i in city_list:
         city_to_coord = requests.get(f"http://api.openweathermap.org/geo/1.0/direct?q={i}&limit=5&appid={key}").json()
